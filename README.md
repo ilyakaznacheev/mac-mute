@@ -6,5 +6,6 @@ Mute mic on Mac
 
 ```bash
 go get -u github.com/ilyakaznacheev/mac-mute
-mute
+
+mac-mute
 ```
