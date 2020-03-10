@@ -1,4 +1,4 @@
-module mac-mute
+module github.com/ilyakaznacheev/mac-mute
 
 go 1.13
 
