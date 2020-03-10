@@ -10,7 +10,6 @@ import (
 )
 
 func main() {
-	a := app.New()
 	var mute, unmute *widget.Button
 
 	changeInput := func(f int) error {
@@ -18,7 +17,7 @@ func main() {
 		return exec.Command("osascript", "-e", cmd).Run()
 	}
 
-	mute = widget.NewButton("MUTE", func() {
+	mute = widget.NewButton("   MUTE   ", func() {
 		mute.Hide()
 		unmute.Show()
 		if err := changeInput(0); err != nil {
@@ -36,8 +35,8 @@ func main() {
 
 	unmute.Hide()
 
-	w := a.NewWindow("Mac Mute")
+	w := app.New().NewWindow("Mac Mute")
 	w.SetFixedSize(true)
-	w.SetContent(widget.NewVBox(mute,unmute))
+	w.SetContent(widget.NewVBox(unmute, mute))
 	w.ShowAndRun()
 }
